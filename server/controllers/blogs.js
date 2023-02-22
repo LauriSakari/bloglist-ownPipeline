@@ -11,6 +11,7 @@ router.get('/', async (request, response) => {
 })
 
 router.delete('/:id', async (request, response) => {
+  // eslint-disable-next-line no-undef
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
 
   if (!request.token || !decodedToken.id) {
@@ -40,6 +41,7 @@ router.post('/', async (request, response) => {
   console.log(request.body)
   const blog = new Blog(request.body)
 
+  // eslint-disable-next-line no-undef
   const decodedToken = jwt.verify(request.token, process.env.SECRET)
 
   console.log(decodedToken)

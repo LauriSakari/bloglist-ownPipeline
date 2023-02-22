@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const supertest = require('supertest')
 const mongoose = require('mongoose')
 const helper = require('./test_helper')
