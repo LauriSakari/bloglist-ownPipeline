@@ -20,5 +20,5 @@ jobs:
       - name: npm install 
         run: cd server && npm install  
       - name: lint
-        run: cd server && npm run eslint
+        run: cd server && npm run lint
 ...
