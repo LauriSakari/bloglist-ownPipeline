@@ -23,8 +23,10 @@ jobs:
         run: ls
       - name: lint
         run: cd server && npm run lint
+      - name: Directory content
+        run: ls
       - name: build
-        run: cd server && npm run build:ui
+        run: cd server && ls && npm run build:ui
       - name: test
         run: cd server && npm test
 ...
