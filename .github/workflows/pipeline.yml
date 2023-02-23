@@ -17,8 +17,10 @@ jobs:
           node-version: '14'
       - name: Directory content
         run: cd server && ls
-      - name: npm install 
-        run: cd server && npm install  
+      - name: npm install backend
+        run: cd server && npm install
+      - name: npm install frontend
+        run: cd client && npm install  
       - name: Directory content
         run: ls
       - name: lint
