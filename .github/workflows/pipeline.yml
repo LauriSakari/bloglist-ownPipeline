@@ -26,7 +26,7 @@ jobs:
       - name: Directory content
         run: ls
       - name: build
-        run: cd server && ls && npm run build:ui
+        run: cd server && ls -a && npm run build:ui
       - name: test
         run: cd server && npm test
 ...
