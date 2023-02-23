@@ -10,7 +10,7 @@ on:
 jobs:
   simple_deployment_pipeline:
     env: 
-      MONGO_URL: ${{secrets.TEST_MONGODB_URI}
+      MONGO_URL: ${{secrets.TEST_MONGODB_URI}}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
