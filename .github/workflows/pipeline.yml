@@ -19,6 +19,12 @@ jobs:
         run: cd server && ls
       - name: npm install 
         run: cd server && npm install  
+      - name: Directory content
+        run: ls -l
       - name: lint
         run: cd server && npm run lint
+      - name: build
+        run: cd server && npm run build
+      - name: test
+        run: cd server && npm test
 ...
