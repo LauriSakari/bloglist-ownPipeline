@@ -13,6 +13,11 @@ env:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
+    services:
+      mongo:
+        image: mongo
+        ports:
+          - 27017:27017
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -20,8 +25,8 @@ jobs:
           node-version: '14'
       - name: Directory content
         run: cd server && ls
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@1.8.0
+      # - name: Start MongoDB
+      #   uses: supercharge/mongodb-github-action@1.8.0
       - name: npm install backend
         run: cd server && npm install
       - name: npm install frontend
