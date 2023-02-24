@@ -7,10 +7,11 @@ on:
       - master
       # note that your "main" branch might be called main instead of master
 
+env: 
+  MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
+
 jobs:
   simple_deployment_pipeline:
-    env: 
-      MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
