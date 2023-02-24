@@ -20,6 +20,8 @@ jobs:
           node-version: '14'
       - name: Directory content
         run: cd server && ls
+      - name: Start MongoDB
+        uses: supercharge/mongodb-github-action@1.8.0
       - name: npm install backend
         run: cd server && npm install
       - name: npm install frontend
