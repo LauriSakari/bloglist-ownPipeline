@@ -34,5 +34,5 @@ jobs:
       - name: build
         run: cd server && ls -a && npm run build:ui
       - name: test
-        run: cd server && npm test
+        run: cd server && npm run test
 ...
