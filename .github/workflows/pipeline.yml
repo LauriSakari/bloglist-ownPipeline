@@ -13,11 +13,11 @@ env:
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
-    services:
-      mongo:
-        image: mongo
-        ports:
-          - 27017:27017
+    # services:
+    #   mongo:
+    #     image: mongo
+    #     ports:
+    #       - 27017:27017
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
