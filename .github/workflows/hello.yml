@@ -18,6 +18,6 @@ jobs:
         run: |
           echo "Hello World!"
       - name: echo mongodb uri
-        run: echo $env.MONGODB_URI
+        run: echo $secret.MONGODB_URI
 
 ...
