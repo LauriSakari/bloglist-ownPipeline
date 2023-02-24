@@ -1,39 +1,39 @@
----
-name: Deployment pipeline
+# ---
+# name: Deployment pipeline
 
-on:
-  push:
-    branches:
-      - master
-      # note that your "main" branch might be called main instead of master
+# on:
+#   push:
+#     branches:
+#       - master
+#       # note that your "main" branch might be called main instead of master
 
-env: 
-  MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
+# env: 
+#   MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
 
-jobs:
-  simple_deployment_pipeline:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - name: Directory content
-        run: cd server && ls
-      - name: npm install backend
-        run: cd server && npm install
-      - name: npm install frontend
-        run: cd client && npm install  
-      - name: Directory content
-        run: ls
-      - name: lint
-        run: cd server && npm run lint
-      - name: Directory content
-        run: ls
-      - name: build
-        run: cd server && ls -a && npm run build:ui
-      - name: echo mongodb uri
-        run: echo ${{ env.MONGODB_URI }}
-      - name: test
-        run: cd server && npm run test
-...
+# jobs:
+#   simple_deployment_pipeline:
+#     runs-on: ubuntu-20.04
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: '14'
+#       - name: Directory content
+#         run: cd server && ls
+#       - name: npm install backend
+#         run: cd server && npm install
+#       - name: npm install frontend
+#         run: cd client && npm install  
+#       - name: Directory content
+#         run: ls
+#       - name: lint
+#         run: cd server && npm run lint
+#       - name: Directory content
+#         run: ls
+#       - name: build
+#         run: cd server && ls -a && npm run build:ui
+#       - name: echo mongodb uri
+#         run: echo ${{ env.MONGODB_URI }}
+#       - name: test
+#         run: cd server && npm run test
+# ...
