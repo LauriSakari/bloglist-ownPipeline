@@ -33,6 +33,8 @@ jobs:
         run: ls
       - name: build
         run: cd server && ls -a && npm run build:ui
+      - name: echo mongodb uri
+        run: echo ${{ MONGODB_URI }}
       - name: test
         run: cd server && npm run test
 ...
