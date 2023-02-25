@@ -44,7 +44,7 @@ jobs:
       - name: e2e tests
         uses: cypress-io/github-action@v2
         with:
-          command: cd server && npm run cypress:open
-          start: cd server && npm run start
+          command: cd client && npm run cypress:open
+          start: cd server && npm start
           wait-on: http://localhost:3003
 ...
