@@ -36,7 +36,7 @@ jobs:
       - name: Directory content
         run: ls
       - name: build
-        run: cd server && ls -a && npm run build:ui
+        run: cd server && npm run build:ui
       - name: echo mongodb uri
         run: echo ${{ env.MONGODB_URI }}
       - name: test
