@@ -42,9 +42,9 @@ jobs:
           MONGODB_URI: ${{env.MONGODB_URI}}
           SECRET: ${{env.SECRET}}
       - name: e2e tests
-        run: cd server
         uses: cypress-io/github-action@v2
         with:
+          project: ./server
           command: cd server && npm run test:e2e
           start: cd server && npm start:test
           wait-on: http://localhost:3003
