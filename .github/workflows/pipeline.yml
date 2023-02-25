@@ -8,17 +8,13 @@ on:
       # note that your "main" branch might be called main instead of master
 
 env: 
+  MONGODB_URI: ${{secrets.MONGODB_URI}}
   TEST_MONGODB_URI: ${{secrets.TEST_MONGODB_URI}}
   SECRET: ${{secrets.SECRET}}
 
 jobs:
   simple_deployment_pipeline:
     runs-on: ubuntu-20.04
-    # services:
-    #   mongo:
-    #     image: mongo
-    #     ports:
-    #       - 27017:27017
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -26,8 +22,6 @@ jobs:
           node-version: '14'
       - name: Directory content
         run: cd server && ls
-      # - name: Start MongoDB
-      #   uses: supercharge/mongodb-github-action@1.8.0
       - name: npm install backend
         run: cd server && npm install
       - name: npm install frontend
@@ -47,4 +41,11 @@ jobs:
         env: 
           MONGODB_URI: ${{env.MONGODB_URI}}
           SECRET: ${{env.SECRET}}
+      - name: e2e tests
+        uses: cypress-io/github-action@v2
+        with:
+          command: cd server && npm run cypress:open
+          run: pwd
+          start: cd server && npm run start
+          wait-on: http://localhost:3003
 ...
