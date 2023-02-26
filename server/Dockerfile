@@ -23,6 +23,7 @@ COPY . .
 
 RUN cd ../client && npm install --production=false
 RUN npm install --production=false
+RUN ls -a
 FROM debian:bullseye
 
 LABEL fly_launch_runtime="nodejs"
