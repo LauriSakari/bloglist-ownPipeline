@@ -11,7 +11,7 @@ RUN volta install node@${NODE_VERSION}
 #######################################################################
 
 RUN mkdir /app
-WORKDIR /app
+WORKDIR /app/server
 
 # NPM will not install any package listed in "devDependencies" when NODE_ENV is set to "production",
 # to install all modules: "npm install --production=false".
@@ -21,7 +21,8 @@ ENV NODE_ENV production
 
 COPY . .
 
-RUN npm install
+RUN cd ../client && npm install --production=false
+RUN npm install --production=false
 FROM debian:bullseye
 
 LABEL fly_launch_runtime="nodejs"
