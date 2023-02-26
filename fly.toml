@@ -1,11 +1,12 @@
-# fly.toml file generated for billowing-silence-7617 on 2023-02-26T13:17:49+02:00
+# fly.toml file generated for ancient-breeze-7938 on 2023-02-26T13:50:15+02:00
 
-app = "billowing-silence-7617"
+app = "ancient-breeze-7938"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
 
 [env]
+  PORT = "8080"
 
 [experimental]
   auto_rollback = true
@@ -35,3 +36,9 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
+
+[deploy]
+  release_command = "npm run build:ui"
+
+[processes]
+  app = "node index.js"
