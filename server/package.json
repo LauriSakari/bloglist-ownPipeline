@@ -1,6 +1,6 @@
 {
-  "engines" : { 
-    "node" : "14.21.2" 
+  "engines": {
+    "node": "14.21.2"
   },
   "name": "blogs-backend",
   "version": "1.0.0",

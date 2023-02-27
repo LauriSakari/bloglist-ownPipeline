@@ -1,6 +1,6 @@
-# fly.toml file generated for ancient-breeze-7938 on 2023-02-26T13:50:15+02:00
+# fly.toml file generated for late-cloud-1958 on 2023-02-27T22:24:19+02:00
 
-app = "ancient-breeze-7938"
+app = "late-cloud-1958"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
@@ -36,9 +36,6 @@ processes = []
     interval = "15s"
     restart_limit = 0
     timeout = "2s"
-
-[deploy]
-  release_command = "npm run build:ui"
 
 [processes]
   app = "node index.js"
