@@ -55,7 +55,7 @@ jobs:
         uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deploy
         run: cd server && flyctl deploy --remote-only
-          env:
-            MONGODB_URI: ${{env.MONGODB_URI}}
-            SECRET: ${{env.SECRET}}
+        env:
+          MONGODB_URI: ${{env.MONGODB_URI}}
+          SECRET: ${{env.SECRET}}
 ...
